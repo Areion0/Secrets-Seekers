@@ -30,12 +30,16 @@
         .then((svgText) => {
           document.getElementById("svg-container").innerHTML = svgText;
           const svgElement = document.querySelector("#svg-container svg");
-          svgPanZoom(svgElement, {
+          var panZoomInstance = svgPanZoom(svgElement, {
             zoomEnabled: true,
             controlIconsEnabled: true,
             fit: true,
             center: true,
+            minZoom: 0.4,
+            maxZoom: 10,
           });
+
+          panZoomInstance.zoom(0.4);
         });
     </script>
   </body>
