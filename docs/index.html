@@ -53,21 +53,19 @@
           panZoomInstance = svgPanZoom(svgElement, {
             zoomEnabled: true,
             controlIconsEnabled: false,
-            minZoom: 0.4,
+            minZoom: 0.45,
             maxZoom: 10,
-            fit: true,
-            center: true,
+            fit: false,
+            center: false,
           });
 
           // Zoom to a specific level and keep it centered
           setTimeout(() => {
-            panZoomInstance.fit();
-            panZoomInstance.center();
-
             // scale down but maintain center
-            const sizes = panZoomInstance.getSizes();
-            const middle = { x: sizes.width / 2, y: sizes.height / 2 };
-            panZoomInstance.zoom(0.4, middle);
+            // const sizes = panZoomInstance.getSizes();
+            // const middle = { x: sizes.width / 1100, y: sizes.height / 1100 };
+            // panZoomInstance.pan({ x: middle.x, y: middle.y });
+            panZoomInstance.zoom(0.45);
           }, 100);
         });
 
